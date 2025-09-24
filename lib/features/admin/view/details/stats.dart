@@ -37,7 +37,7 @@ class Stats extends StatelessWidget {
                             child: Icon(Icons.arrow_back_ios_new)),
                         const Text(
                           textAlign: TextAlign.right,
-                          'المستخدمين',
+                          'الاحصائيات',
                           style: TextStyle(
                             fontSize: 24,
                             fontWeight: FontWeight.bold,
