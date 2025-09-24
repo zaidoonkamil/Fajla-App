@@ -9,6 +9,7 @@ import 'package:intl/intl.dart';
 
 import '../../../core/network/remote/dio_helper.dart';
 import '../../../core/styles/themes.dart';
+import '../../../core/widgets/app_bar.dart';
 import '../../../core/widgets/circular_progress.dart';
 import '../cubit/cubit.dart';
 import '../cubit/states.dart';
@@ -63,7 +64,24 @@ class Home extends StatelessWidget {
                               ],
                             ),
                             SizedBox(width: 4,),
-                            Image.asset('assets/images/Mask group.png'),
+                            Container(
+                              padding: const EdgeInsets.all(1),
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(8),
+                                border: Border.all(
+                                  color: primaryColor,
+                                  width: 1,
+                                ),
+                              ),
+                              child: ClipOval(
+                                child: Image.asset(
+                                  'assets/images/logo.jpeg',
+                                  height: 40,
+                                  width: 40,
+                                  fit: BoxFit.cover,
+                                ),
+                              ),
+                            ),
                           ],
                         ),
                       ],

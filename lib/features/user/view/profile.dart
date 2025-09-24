@@ -8,6 +8,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../../core/styles/themes.dart';
+import '../../../core/widgets/app_bar.dart';
 import '../../../core/widgets/circular_progress.dart';
 import '../../../core/widgets/constant.dart';
 import '../cubit/cubit.dart';
@@ -34,22 +35,8 @@ class Profile extends StatelessWidget {
                     physics: BouncingScrollPhysics(),
                     child: Column(
                       children: [
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            SizedBox(width: 20,),
-                            const Text(
-                              textAlign: TextAlign.right,
-                              'حسابي',
-                              style: TextStyle(
-                                fontSize: 20,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                            SizedBox(width: 20,),
-                          ],
-                        ),
-                        SizedBox(height: 22,),
+                        CustomAppBar(),
+                        SizedBox(height: 18,),
                         cubit.profileModel != null? Container(
                           padding: EdgeInsets.all(12),
                           margin: EdgeInsets.symmetric(horizontal: 16,vertical: 4),

@@ -6,6 +6,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
 
 import '../../../core/styles/themes.dart';
+import '../../../core/widgets/app_bar.dart';
 import '../../../core/widgets/circular_progress.dart';
 import '../cubit/cubit.dart';
 import '../cubit/states.dart';
@@ -25,121 +26,113 @@ class OrdersAgent extends StatelessWidget {
           var cubit = AgentCubit.get(context);
           return SafeArea(
             child: Scaffold(
-              body: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 12.0),
-                child: Column(
-                  children: [
-                    SizedBox(height: 12),
-                    Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 12, vertical: 0),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
+              body: Column(
+                children: [
+                  CustomAppBar(),
+                  Expanded(
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 12.0),
+                      child: Column(
                         children: [
-                          const Text(
-                            'طلباتي',
-                            style: TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.bold,
+                          SizedBox(height: 20),
+                          Expanded(
+                              child: Row(
+                                children: [
+                                  Expanded(
+                                    child: GestureDetector(
+                                      onTap: (){
+                                        navigateTo(context, DetailsOrdersAgent(status: 'قيد الانتضار'));
+                                      },
+                                      child: Container(
+                                        decoration: BoxDecoration(
+                                          borderRadius: BorderRadius.circular(12),
+                                          color: primaryColor,
+                                        ),
+                                        child: Center(
+                                          child: Text(
+                                            'قيد الانتضار',
+                                            style: TextStyle(color: Colors.white),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  SizedBox(width: 8),
+                                  Expanded(
+                                    child: GestureDetector(
+                                      onTap: (){
+                                        navigateTo(context, DetailsOrdersAgent(status: 'قيد التوصيل'));
+                                      },
+                                      child: Container(
+                                        decoration: BoxDecoration(
+                                          borderRadius: BorderRadius.circular(12),
+                                          color: primaryColor,
+                                        ),
+                                        child: Center(
+                                          child: Text(
+                                            'قيد التوصيل',
+                                            style: TextStyle(color: Colors.white),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
                             ),
-                          ),
+                          SizedBox(height: 12),
+                          Expanded(
+                              child: Row(
+                                children: [
+                                  Expanded(
+                                    child: GestureDetector(
+                                      onTap: (){
+                                        navigateTo(context, DetailsOrdersAgent(status: 'ملغي'));
+                                      },
+                                      child: Container(
+                                        decoration: BoxDecoration(
+                                          borderRadius: BorderRadius.circular(12),
+                                          color: primaryColor,
+                                        ),
+                                        child: Center(
+                                          child: Text(
+                                            'ملغي',
+                                            style: TextStyle(color: Colors.white),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  SizedBox(width: 8),
+                                  Expanded(
+                                    child: GestureDetector(
+                                      onTap: (){
+                                        navigateTo(context, DetailsOrdersAgent(status: 'مكتمل'));
+                                      },
+                                      child: Container(
+                                        decoration: BoxDecoration(
+                                          borderRadius: BorderRadius.circular(12),
+                                          color: primaryColor,
+                                        ),
+                                        child: Center(
+                                          child: Text(
+                                            'مكتمل',
+                                            style: TextStyle(color: Colors.white),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
                         ],
                       ),
                     ),
-                    SizedBox(height: 20),
-                    Expanded(
-                        child: Row(
-                          children: [
-                            Expanded(
-                              child: GestureDetector(
-                                onTap: (){
-                                  navigateTo(context, DetailsOrdersAgent(status: 'قيد الانتضار'));
-                                },
-                                child: Container(
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(12),
-                                    color: primaryColor,
-                                  ),
-                                  child: Center(
-                                    child: Text(
-                                      'قيد الانتضار',
-                                      style: TextStyle(color: Colors.white),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ),
-                            SizedBox(width: 8),
-                            Expanded(
-                              child: GestureDetector(
-                                onTap: (){
-                                  navigateTo(context, DetailsOrdersAgent(status: 'قيد التوصيل'));
-                                },
-                                child: Container(
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(12),
-                                    color: primaryColor,
-                                  ),
-                                  child: Center(
-                                    child: Text(
-                                      'قيد التوصيل',
-                                      style: TextStyle(color: Colors.white),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    SizedBox(height: 12),
-                    Expanded(
-                        child: Row(
-                          children: [
-                            Expanded(
-                              child: GestureDetector(
-                                onTap: (){
-                                  navigateTo(context, DetailsOrdersAgent(status: 'ملغي'));
-                                },
-                                child: Container(
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(12),
-                                    color: primaryColor,
-                                  ),
-                                  child: Center(
-                                    child: Text(
-                                      'ملغي',
-                                      style: TextStyle(color: Colors.white),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ),
-                            SizedBox(width: 8),
-                            Expanded(
-                              child: GestureDetector(
-                                onTap: (){
-                                  navigateTo(context, DetailsOrdersAgent(status: 'مكتمل'));
-                                },
-                                child: Container(
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(12),
-                                    color: primaryColor,
-                                  ),
-                                  child: Center(
-                                    child: Text(
-                                      'مكتمل',
-                                      style: TextStyle(color: Colors.white),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                  ],
-                ),
-              ),),
+                  ),
+                ],
+              ),
+            ),
           );
         },
       ),

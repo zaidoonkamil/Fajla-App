@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
 
 import '../../../core/styles/themes.dart';
+import '../../../core/widgets/app_bar.dart';
 import '../../../core/widgets/circular_progress.dart';
 import '../cubit/cubit.dart';
 import '../cubit/states.dart';
@@ -25,23 +26,7 @@ class Orders extends StatelessWidget {
             child: Scaffold(
               body: Column(
                 children: [
-                  SizedBox(height: 20,),
-                  Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 12,vertical: 0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        const Text(
-                          textAlign: TextAlign.right,
-                          'طلباتي',
-                          style: TextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                    ],
-                    ),
-                  ),
+                  CustomAppBar(),
                   SizedBox(height: 12,),
                   ConditionalBuilder(
                     condition: state is! GetOrdersUserLoadingState,

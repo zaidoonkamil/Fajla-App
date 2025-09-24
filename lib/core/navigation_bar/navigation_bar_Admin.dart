@@ -62,7 +62,7 @@ class _BottomNavBarAdminState extends State<BottomNavBarAdmin> {
                 GButton(
                   leading: _selectedIndex==1?Icon(Icons.details,color: Colors.white,):Icon(Icons.details),
                   icon: Icons.verified_user,
-                  text: 'حسابي',
+                  text: 'التفاصيل',
                 ),
                 GButton(
                   leading: _selectedIndex==2?Image.asset('assets/images/package-moving (2).png'):Image.asset('assets/images/package-moving.png'),

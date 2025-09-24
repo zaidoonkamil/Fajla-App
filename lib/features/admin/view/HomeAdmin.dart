@@ -48,29 +48,37 @@ class HomeAdmin extends StatelessWidget {
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 20.0,vertical: 10),
                         child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          mainAxisAlignment: MainAxisAlignment.end,
                           children: [
-                           adminOrUser !='admin'? GestureDetector(
-                                onTap: (){
-                                  navigateTo(context, NotificationsUser());
-                                },
-                                child: Image.asset('assets/images/notif.png')):Container(),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.end,
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.end,
                               children: [
-                                Column(
-                                  crossAxisAlignment: CrossAxisAlignment.end,
-                                  children: [
-                                    Text('..! ${cubit.getGreeting()}',style: TextStyle(color:secondTextColor),textAlign: TextAlign.end,),
-                                    Text(cubit.profileModel!.name,textAlign: TextAlign.end,),
-                                  ],
-                                ),
-                                SizedBox(width: 4,),
-                                Image.asset('assets/images/Mask group.png'),
+                                Text('..! ${cubit.getGreeting()}',style: TextStyle(color:secondTextColor),textAlign: TextAlign.end,),
+                                Text(cubit.profileModel!.name,textAlign: TextAlign.end,),
                               ],
+                            ),
+                            SizedBox(width: 4,),
+                            Container(
+                              padding: const EdgeInsets.all(1),
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(8),
+                                border: Border.all(
+                                  color: primaryColor,
+                                  width: 1,
+                                ),
+                              ),
+                              child: ClipOval(
+                                child: Image.asset(
+                                  'assets/images/logo.jpeg',
+                                  height: 40,
+                                  width: 40,
+                                  fit: BoxFit.cover,
+                                ),
+                              ),
                             ),
                           ],
                         ),
+
                       ),
                       Expanded(
                         child: SingleChildScrollView(

@@ -1,5 +1,6 @@
 import 'package:conditional_builder_null_safety/conditional_builder_null_safety.dart';
 import 'package:fajla/core/%20navigation/navigation.dart';
+import 'package:fajla/core/widgets/app_bar.dart';
 import 'package:fajla/features/user/view/complete_shopping.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -28,22 +29,7 @@ class Basket extends StatelessWidget {
             child: Scaffold(
               body: Column(
                 children: [
-                  SizedBox(height: 10,),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      SizedBox(width: 20,),
-                      const Text(
-                        textAlign: TextAlign.right,
-                        'السلة',
-                        style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      SizedBox(width: 20,),
-                    ],
-                  ),
+                  CustomAppBar(),
                   SizedBox(height: 16,),
                   ConditionalBuilder(
                     condition: state is! GetBasketLoadingState,

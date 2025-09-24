@@ -6,6 +6,7 @@ import 'package:intl/intl.dart';
 
 import '../../../core/ navigation/navigation.dart';
 import '../../../core/styles/themes.dart';
+import '../../../core/widgets/app_bar.dart';
 import '../../../core/widgets/circular_progress.dart';
 import '../cubit/cubit.dart';
 import '../cubit/states.dart';
@@ -28,29 +29,7 @@ class DetailsOrdersAdmin extends StatelessWidget {
             child: Scaffold(
               body: Column(
                 children: [
-                  SizedBox(height: 20,),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Container(width: 26,),
-                        Text(
-                          textAlign: TextAlign.right,
-                          status,
-                          style: TextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        GestureDetector(
-                            onTap: (){
-                              navigateBack(context);
-                            },
-                            child: Icon(Icons.keyboard_arrow_right_outlined,size: 32,)),
-                      ],
-                    ),
-                  ),
+                  CustomAppBar(),
                   SizedBox(height: 12,),
                   ConditionalBuilder(
                     condition: state is! GetOrdersAdminLoadingState,
