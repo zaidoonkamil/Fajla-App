@@ -63,6 +63,10 @@ class GetNameUserLoadingState extends AdminStates {}
 class GetNameUserSuccessState extends AdminStates {}
 class GetNameUserErrorState extends AdminStates {}
 
+class GetStatsLoadingState extends AdminStates {}
+class GetStatsSuccessState extends AdminStates {}
+class GetStatsErrorState extends AdminStates {}
+
 class DeleteUserLoadingState extends AdminStates {}
 class DeleteUserSuccessState extends AdminStates {}
 class DeleteUserErrorState extends AdminStates {}

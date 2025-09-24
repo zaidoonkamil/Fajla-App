@@ -13,6 +13,7 @@ import '../../../core/widgets/show_toast.dart';
 import '../../user/model/CatModel.dart';
 import '../../user/model/GetAdsModel.dart';
 import '../../user/model/ProfileModel.dart';
+import '../model/StatsModel.dart';
 import '../model/getNameUser.dart';
 
 
@@ -209,6 +210,25 @@ class AdminCubit extends Cubit<AdminStates> {
         showToastError(text: error.toString(), context: context,);
         print(error.toString());
         emit(GetCatErrorState());
+      }else {
+        print("Unknown Error: $error");
+      }
+    });
+  }
+
+  StatsModel? statsModel;
+  void getStats({required BuildContext context,}) {
+    emit(GetStatsLoadingState());
+    DioHelper.getData(
+      url: '/stats',
+    ).then((value) {
+      statsModel = StatsModel.fromJson(value.data);
+      emit(GetStatsSuccessState());
+    }).catchError((error) {
+      if (error is DioError) {
+        showToastError(text: error.toString(), context: context,);
+        print(error.toString());
+        emit(GetStatsErrorState());
       }else {
         print("Unknown Error: $error");
       }

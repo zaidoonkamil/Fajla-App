@@ -27,23 +27,26 @@ class AllPerson extends StatelessWidget {
               body: Column(
                 children: [
                   SizedBox(height: 20,),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      GestureDetector(
-                          onTap: (){
-                            navigateBack(context);
-                          },
-                          child: Icon(Icons.arrow_back_ios_new,)),
-                      const Text(
-                        textAlign: TextAlign.right,
-                        'المستخدمين',
-                        style: TextStyle(
-                          fontSize: 24,
-                          fontWeight: FontWeight.bold,
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        GestureDetector(
+                            onTap: (){
+                              navigateBack(context);
+                            },
+                            child: Icon(Icons.arrow_back_ios_new,)),
+                        const Text(
+                          textAlign: TextAlign.right,
+                          'المستخدمين',
+                          style: TextStyle(
+                            fontSize: 24,
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                   const SizedBox(height: 20),
                   ConditionalBuilder(

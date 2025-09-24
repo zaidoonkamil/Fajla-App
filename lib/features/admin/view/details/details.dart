@@ -1,6 +1,7 @@
 import 'package:fajla/features/admin/view/details/add_admin.dart';
 import 'package:fajla/features/admin/view/details/add_user.dart';
 import 'package:fajla/features/admin/view/details/all_user_chat_admin.dart';
+import 'package:fajla/features/admin/view/details/stats.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -168,6 +169,28 @@ class Details extends StatelessWidget {
                                         mainAxisAlignment: MainAxisAlignment.center,
                                         children: [
                                           Text('الدردشات',
+                                            style: TextStyle(color: Colors.white,fontSize: 16),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                  SizedBox(height: 10),
+                                  GestureDetector(
+                                    onTap: (){
+                                       navigateTo(context, Stats());
+                                    },
+                                    child: Container(
+                                      width: double.maxFinite,
+                                      height: 42,
+                                      decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(10),
+                                        color: primaryColor,
+                                      ),
+                                      child: Row(
+                                        mainAxisAlignment: MainAxisAlignment.center,
+                                        children: [
+                                          Text('الاحصائيات',
                                             style: TextStyle(color: Colors.white,fontSize: 16),
                                           ),
                                         ],
