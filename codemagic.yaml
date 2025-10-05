@@ -5,8 +5,8 @@ workflows:
     environment:
       flutter: stable
       xcode: latest
-      groups:
-        - appstore
+#      groups:
+#        - appstore
     scripts:
       - name: Get dependencies
         script: flutter pub get
