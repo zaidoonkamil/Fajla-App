@@ -5,15 +5,18 @@ workflows:
     environment:
       flutter: stable
       xcode: latest
+      groups:
+        - appstore
     scripts:
       - name: Get dependencies
         script: flutter pub get
       - name: Build iOS app
-        script: flutter build ios --release
+        script: flutter build ipa --release --no-codesign
     artifacts:
-      - build/ios/iphoneos/Runner.app
+      - build/ios/ipa/*.ipa
     publishing:
       app_store_connect:
         apple_id: "zaidoona081@gmail.com"
         api_key_id: "TJWY33FYXY"
         issuer_id: "31c5c3e7-22bb-499b-8d0f-df7e49582ae1"
+        api_key: $APP_STORE_KEY
