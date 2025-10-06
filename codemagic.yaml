@@ -10,6 +10,11 @@ workflows:
     scripts:
       - name: Get dependencies
         script: flutter pub get
+      - name: Set Bundle Identifier
+        script: |
+          cd ios
+          /usr/libexec/PlistBuddy -c "Set :CFBundleIdentifier com.napol.fajla" Runner/Info.plist
+          cd ..
       - name: Build iOS app
         script: flutter build ipa --release --no-codesign
     artifacts:
