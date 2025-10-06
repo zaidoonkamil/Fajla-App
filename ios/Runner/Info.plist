@@ -15,8 +15,7 @@
     <array>
         <string>remote-notification</string>
     </array>
-    <key>NSUserTrackingUsageDescription</key>
-    <string>التطبيق يستخدم بيانات التعقب لتحسين تجربة المستخدم</string>
+
     <key>NSCameraUsageDescription</key>
     <string>التطبيق يحتاج الوصول للكاميرا لالتقاط الصور</string>
 
