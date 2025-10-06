@@ -10,6 +10,16 @@
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
 	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+
+	<key>UIBackgroundModes</key>
+    <array>
+        <string>remote-notification</string>
+    </array>
+    <key>NSUserTrackingUsageDescription</key>
+    <string>التطبيق يستخدم بيانات التعقب لتحسين تجربة المستخدم</string>
+    <key>NSCameraUsageDescription</key>
+    <string>التطبيق يحتاج الوصول للكاميرا لالتقاط الصور</string>
+
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
